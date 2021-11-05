@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}{% endblock %}
+    <title>UPRM Books - {% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div>
+        UPRM Books:
+        <a href="{{ url_for('home') }}">Home</a>
+        {% if current_user.is_anonymous %}
+        <a href="{{ url_for('login') }}">Login</a>
+        {% else %}
+        <a href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
+        <a href="{{url_for('createposting') }}">Create Posting</a>
+    </div>
+    {% block content %}
+    
+    {% endblock %}
+
+   
+</body>
+</html>

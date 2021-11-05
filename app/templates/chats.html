@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+<script>
+    import User from app.models
+    function getuser(id){
+        
+        u = User.query.filter_by(id=id).first_or_404();
+
+        return(u.full_name);
+
+    }
+
+</script>
+
+{% block content %}
+    <h1>{{user.full_name}} chats</h1>
+    {% for chat in chats %}
+        {% if chat.user1 == user.id %}
+        <script>getuser(user2)</script>
+            
+        {% else %}
+            getuser(user1)
+        {% endif %}
+        <br>
+    {% endfor %}
+
+    
+
+    
+{% endblock %}
+
+
