@@ -1,8 +1,8 @@
 {% extends "base.html" %}
-
+{% block title %}Login{% endblock %}
+{% block navbar %}{% endblock %}
 {% block content %}
-    <h1>Log In</h1>
-    <form action="" method="post" novalidate>
+    <!-- <form action="" method="post" novalidate> 
         {{ form.hidden_tag() }}
         <p>
             {{ form.email.label }}<br>
@@ -14,7 +14,38 @@
         </p>
         <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
         <p>{{ form.submit() }}</p>
-    </form>
-
-    <p>New User? <a href="{{ url_for('signup') }}">Click to Register!</a></p>
+    </form>-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <form action="" class="row-g-3" method="post" novalidate>
+                <h1>Welcome</h1>
+                {{ form.hidden_tag() }}
+                <div class="row-md-6">
+                    <div class="col" id="email_icon"></div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Email" id="inputEmail" aria-label="Email">
+                    </div>
+                </div>
+                <div class="row-md-6">
+                  <label for="inputPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="inputPassword">
+                </div>
+                <div class="row-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Remember me
+                    </label>
+                  </div>
+                </div>
+                <div class="row-12" id="log-in-button">
+                  <button type="submit">Log in</button>
+                </div>
+                <p>New User? <a href="{{ url_for('signup') }}">Sign up now!</a></p>
+              </form>
+        </div>
+        <div class="col-sm-8"></div>
+    </div>
+</div>
 {% endblock %}
