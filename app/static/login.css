@@ -1,21 +1,27 @@
+/* Defining attributes for base html tags */
 
-html{
-    width: 100vw;
-    height: 100vh;
+h1{
+    text-align: center;
+    color: white;
+    padding: 10px;
+    font-size: 50px;
 }
 
-body{
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
+p{
+    color: white;
 }
 
-.col-sm-8{
-    margin: 0;
-    background-image: url("/app/src/images/college-textbooks-stack.png");
-    width: 100;
-    height: 100;
+button{
+    color: #00F;
 }
+
+a{
+    /* Set it to orange temporarily because
+    blue doesn't contrast with the green background. */
+    color: rgb(255, 133, 4);
+}
+
+/* Attributes for classes */
 
 .row{
     margin: 0;
@@ -23,45 +29,68 @@ body{
     margin-right: 0;
 }
 
-.container{
-    margin: 0;
-    width: 100%;
-}
-
 .row-g-3{
     margin: 0;
     position: relative;
-    top: 30%;
+    top: 10%;
     left: 0%;
 }
 
-
-.col-sm-4{
-    background-color: #387434;
-    height: 100vh;
-    width: 25vw;
-    stroke: black;
-    vertical-align: middle;
-}
-
-h1{
-    text-align: center;
-    color: white;
-}
-
-p{
-    color: white;
-    
+.col{
+    padding: 3px;
 }
 
 .form-check-label{
     color: white;
 }
 
-#email_icon{
-
+.form-control{
+    width: 100%;
 }
 
+p.bottom{
+    text-align: justify;
+    position: relative;
+    top: 15%;
+}
 
+/* Attributes for id's */
 
+#left-column{
+    background-color: #387434;
+    height: 100vh;
+    vertical-align: middle;
+}
 
+#right-column{
+    height: 100vh;
+    background-image: url('/static/src/images/college-textbooks-stack.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#log-in-button{
+    right: 0%;
+    position: absolute;
+}
+
+#show{
+    right: 0%;
+    position: absolute;
+}
+
+#uprm-logo{
+    height: 250px;
+    width: 250px;
+    position: relative;
+    left: 21%;
+    top: 12%;
+    
+}
+
+/* #email_icon{
+    padding: 1px;
+    background-image: url('/static/src/images/mail_icon.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+} */

@@ -15,37 +15,45 @@
         <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
         <p>{{ form.submit() }}</p>
     </form>-->
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4">
-            <form action="" class="row-g-3" method="post" novalidate>
-                <h1>Welcome</h1>
-                {{ form.hidden_tag() }}
-                <div class="row-md-6">
-                    <div class="col" id="email_icon"></div>
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Email" id="inputEmail" aria-label="Email">
-                    </div>
-                </div>
-                <div class="row-md-6">
-                  <label for="inputPassword" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="inputPassword">
-                </div>
-                <div class="row-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                      Remember me
-                    </label>
-                  </div>
-                </div>
-                <div class="row-12" id="log-in-button">
-                  <button type="submit">Log in</button>
-                </div>
-                <p>New User? <a href="{{ url_for('signup') }}">Sign up now!</a></p>
-              </form>
-        </div>
-        <div class="col-sm-8"></div>
+  <div class="row">
+      <div class="col-sm-4" id="left-column">
+        <form action="" class="row-g-3" method="post" novalidate>
+          <h1>Welcome</h1>
+          {{ form.hidden_tag() }}
+          <div class="row-md-6">
+            <!-- <div class="col-sm-4" id="email_icon"></div> -->
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Email" id="inputEmail" aria-label="Email">
+            </div>
+          </div>
+          <div class="row-md-6">
+              <!-- <div class="col" id="password_icon"></div> -->
+              <div class="col">
+                  <input type="password" class="form-control" placeholder="Password" id="inputPassword" aria-label="Password">
+              </div>
+              <input class="form-check-input" type="checkbox" onclick="showPassword()">
+              <label class="form-check-label" for="gridCheck">
+                Show Password
+              </label>
+          </div>
+          <div class="row-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Remember me
+              </label>
+            </div>
+          </div>
+          <div class="row-12" id="log-in-button">
+            <button type="submit" class="btn btn-primary">Log in</button>
+          </div>
+          <p>New User? <a href="{{ url_for('signup') }}">Sign up now!</a></p>
+      </form>
+      <img src="/static/src/images/uprm-logo.png" id="uprm-logo" alt="UPRM Logo">
+      <p class="bottom"> By logging in, you agree to our terms of service and privacy policy.
+Money transmission is not provided by UPRM Books (NMLS ID:2017010) pursuant to its licenses.
+      </p>  
     </div>
-</div>
+      <div class="col-sm-8" id="right-column"></div>
+  </div>
 {% endblock %}
