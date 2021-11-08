@@ -7,8 +7,9 @@ from app.models import Book, User
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
+    show_password = BooleanField('Show Password')
     remember_me = BooleanField('Remember Me')
-    submit = SubmitField('Sign In')
+    submit = SubmitField('Log In')
 
 
 class SignUpForm(FlaskForm):

@@ -23,28 +23,25 @@
           <div class="row-md-6">
             <!-- <div class="col-sm-4" id="email_icon"></div> -->
             <div class="col">
-                <input type="text" class="form-control" placeholder="Email" id="inputEmail" aria-label="Email">
+              {{ form.email(class="form-control", placeholder="Email") }}              
             </div>
           </div>
           <div class="row-md-6">
               <!-- <div class="col" id="password_icon"></div> -->
               <div class="col">
-                  <input type="password" class="form-control" placeholder="Password" id="inputPassword" aria-label="Password">
+                  <input type="password" class="form-control" placeholder="Password" id="inputPassword" value="{{request.form.password}}" aria-label="Password">
               </div>
-              <input class="form-check-input" type="checkbox" onclick="showPassword()">
-              <label class="form-check-label" for="gridCheck">
-                Show Password
-              </label>
+              <div class="form-check">
+                {{ form.show_password(class="checkBox", onclick="showPassword()") }} {{ form.show_password.label(id="checkbox-label") }}
+              </div>
           </div>
           <div class="row-12">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                Remember me
-              </label>
+              {{ form.remember_me(class="checkBox") }} {{ form.remember_me.label(id="checkbox-label") }}
             </div>
           </div>
           <div class="row-12" id="log-in-button">
+            <!-- {{ form.submit(class="button") }} -->
             <button type="submit" class="btn btn-primary">Log in</button>
           </div>
           <p>New User? <a href="{{ url_for('signup') }}">Sign up now!</a></p>

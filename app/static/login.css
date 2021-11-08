@@ -18,7 +18,8 @@ button{
 a{
     /* Set it to orange temporarily because
     blue doesn't contrast with the green background. */
-    color: rgb(255, 133, 4);
+    color: #00F;
+    text-shadow: white;
 }
 
 /* Attributes for classes */
@@ -40,18 +41,15 @@ a{
     padding: 3px;
 }
 
-.form-check-label{
-    color: white;
-}
-
 .form-control{
     width: 100%;
 }
 
 p.bottom{
     text-align: justify;
+    font-size: small;
     position: relative;
-    top: 15%;
+    top: 20%;
 }
 
 /* Attributes for id's */
@@ -80,13 +78,21 @@ p.bottom{
 }
 
 #uprm-logo{
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     position: relative;
-    left: 21%;
-    top: 12%;
-    
+    left: 25%;
+    top: 15%;
 }
+
+#submit{
+    color: #00F;
+}
+
+#checkbox-label{
+    color: white;
+}
+
 
 /* #email_icon{
     padding: 1px;
