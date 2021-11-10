@@ -10,11 +10,15 @@
       href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
       rel="stylesheet">
 
+    
+
     {% if request.endpoint == 'home' %}
       <link href="{{ url_for('static', filename='home.css') }}" rel="stylesheet" type="text/css">
     {% elif request.endpoint == 'login' %}
       <link href="{{ url_for('static', filename='login.css') }}" rel="stylesheet" type="text/css">
       <script src="{{url_for('static', filename='showPassword.js')}}"></script>
+    {% elif request.endpoint == 'signup' %}
+      <link href="{{ url_for('static', filename='signup.css') }}" rel="stylesheet" type="text/css">
     {% endif %}
 {% endblock %}
     <title>{% block title %}{% endblock %} - UPRM Books</title>
@@ -46,8 +50,6 @@
     {% block content %}
     
     {% endblock %}
-   <footer>
-       
-   </footer>
 </body>
+<footer></footer>
 </html>

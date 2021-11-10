@@ -2,34 +2,19 @@
 {% block title %}Login{% endblock %}
 {% block navbar %}{% endblock %}
 {% block content %}
-    <!-- <form action="" method="post" novalidate> 
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.email.label }}<br>
-            {{ form.email(size=32) }}
-        </p>
-        <p>
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}
-        </p>
-        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-        <p>{{ form.submit() }}</p>
-    </form>-->
   <div class="row">
       <div class="col-sm-4" id="left-column">
         <form action="" class="row-g-3" method="post" novalidate>
           <h1>Welcome</h1>
           {{ form.hidden_tag() }}
           <div class="row-md-6">
-            <!-- <div class="col-sm-4" id="email_icon"></div> -->
             <div class="col">
               {{ form.email(class="form-control", placeholder="Email") }}              
             </div>
           </div>
           <div class="row-md-6">
-              <!-- <div class="col" id="password_icon"></div> -->
               <div class="col">
-                  <input type="password" class="form-control" placeholder="Password" id="inputPassword" value="{{request.form.password}}" aria-label="Password">
+                {{ form.password(class="form-control", placeholder="Password", id="inputPassword") }}              
               </div>
               <div class="form-check">
                 {{ form.show_password(class="checkBox", onclick="showPassword()") }} {{ form.show_password.label(id="checkbox-label") }}
@@ -41,8 +26,7 @@
             </div>
           </div>
           <div class="row-12" id="log-in-button">
-            <!-- {{ form.submit(class="button") }} -->
-            <button type="submit" class="btn btn-primary">Log in</button>
+            {{ form.submit(class="btn btn-primary")}}
           </div>
           <p>New User? <a href="{{ url_for('signup') }}">Sign up now!</a></p>
       </form>

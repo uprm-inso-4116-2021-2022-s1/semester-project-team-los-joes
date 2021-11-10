@@ -11,10 +11,6 @@ p{
     color: white;
 }
 
-button{
-    color: #00F;
-}
-
 a{
     /* Set it to orange temporarily because
     blue doesn't contrast with the green background. */
@@ -43,6 +39,7 @@ a{
 
 .form-control{
     width: 100%;
+    border-radius: 15px;
 }
 
 p.bottom{
@@ -85,18 +82,7 @@ p.bottom{
     top: 15%;
 }
 
-#submit{
-    color: #00F;
-}
-
 #checkbox-label{
     color: white;
 }
 
-
-/* #email_icon{
-    padding: 1px;
-    background-image: url('/static/src/images/mail_icon.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-} */

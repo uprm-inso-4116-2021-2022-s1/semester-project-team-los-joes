@@ -1,0 +1,71 @@
+body{
+    background-image: url('/static/src/images/bookshelf.png');
+    background-size: cover;
+}
+
+p{
+    color: gray;
+}
+
+form{
+    width: fit-content;
+}
+
+.form-items{
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+}
+
+.form-container{
+    background-color: white;
+    border-radius: 15px;
+    position: fixed;
+    left: 25%;
+    bottom: 10%;
+}
+
+.box{
+    font-size: x-large;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.container{
+    height: 100vh;
+}
+
+.img{
+    width: 50px;
+    height: 50px;
+}
+
+.logo-row{
+    width: fit-content;
+    background-color: #387434;
+    border-radius: 15px;
+    padding: 3px;
+    margin-bottom: 100px;
+    margin-top: 3%;
+}
+
+.form-control{
+    border-radius: 15px;
+    box-shadow: 1px black;
+    width: 75%;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+.input-boxes{
+    padding: 3px;
+    margin-left: 20%;
+}
+
+#handshake{
+    width: 20%;
+    height: 10%;
+}
