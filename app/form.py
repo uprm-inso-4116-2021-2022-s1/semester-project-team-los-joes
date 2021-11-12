@@ -1,6 +1,6 @@
 from re import RegexFlag
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField, FileField, IntegerField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField, FileField, IntegerField, TextAreaField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from app.models import Book, User
 
@@ -37,7 +37,8 @@ class NewPostingForm(FlaskForm):
     for book in Book.query.all():
         isbn_choices.append(book.title)
     title = SelectField('Title', choices=isbn_choices, validators=[DataRequired()])
-    condition = SelectField('Book Condition', choices=['Like New','Used', 'Very Used', 'Barely Holding On'], validators=[DataRequired()])
-    price = IntegerField('Price',validators=[DataRequired()])
+    description = TextAreaField('Add Description', validators=[DataRequired()])
+    condition = SelectField('Condition', choices=['Like New','Used', 'Very Used', 'Barely Holding On'], validators=[DataRequired()])
+    price = IntegerField('Enter Price',validators=[DataRequired()])
     image = FileField(u'Image File', validators=[DataRequired()])
-    submit = SubmitField('Create')
+    submit = SubmitField('Submit')

@@ -1,0 +1,10 @@
+body{
+    background-image: url('/static/src/images/addlistingsbookstack.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.form-description{
+    width: 500px;
+    height: 300px;
+}
