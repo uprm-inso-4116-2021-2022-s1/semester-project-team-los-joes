@@ -2,8 +2,8 @@ body{
     background-image: url('/static/src/image/Calculus.png');
     background-position-y: 50%;
     background-size: 30px;
-   
 }
-.nav{
+
+#nav{
     background-color: green;
 }

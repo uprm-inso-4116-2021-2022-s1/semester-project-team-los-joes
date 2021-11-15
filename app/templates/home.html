@@ -1,8 +1,11 @@
 {% extends "base.html" %}
-<head><link href="/static/home.css" rel="stylesheet"></head>
+<head>
+  <link href="/static/home.css" rel="stylesheet">
+</head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg ">
+        <div  id="nav" class="container-fluid">
             <a class="navbar-brand" href="#">
                 UPRM Books
             </a>
@@ -27,10 +30,8 @@
 
 {% block content %}
 
-    <p>Hello!</p>
-
     <h1>Welcome To UPRM Books!</h1>
-    <img src = /static/src/images/Calculus.png>
+   
 
     <a href="{{ url_for('books') }}">Books</a>
 

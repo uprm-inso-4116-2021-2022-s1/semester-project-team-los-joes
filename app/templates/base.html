@@ -4,14 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width", initial-scale="1">
+    <link rel="icon" type="image/png" href="static/src/images/books_accent_blue.png" sizes="32x32"> <!--Tab Icon-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link
       href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
       rel="stylesheet">
-
-    
-
     {% if request.endpoint == 'home' %}
       <link href="{{ url_for('static', filename='home.css') }}" rel="stylesheet" type="text/css">
     {% elif request.endpoint == 'login' %}
@@ -22,30 +20,36 @@
     {% endif %}
 {% endblock %}
     <title>{% block title %}{% endblock %} - UPRM Books</title>
+    <link href="/static/base.css" rel="stylesheet">
 </head>
 <body>
     {% block navbar%}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar">
+        <div class="container-fluid nav-items">
             <a class="navbar-brand" href="#">
-                UPRM Books
+              <img src="/static/src/images/books_accent_blue.png" class="book-img" alt="Book with blue bookmark"> 
+              UPRM Books Marketplace <img src="/static/src/images/paw.png" class="paw-img" alt="small paw">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" 
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <a class="nav-item nav-link" id="home" href="{{ url_for('home') }}">Home</a>
-                {% if current_user.is_anonymous %}
-                <a class="nav-item nav-link" id="login" href="{{ url_for('login') }}">Login</a>
-                {% else %}
-                <a class="nav-item nav-link" id="logout" href="{{ url_for('logout') }}">Logout</a>
-                {% endif %}
-                <a class="nav-item nav-link" id="createListing" href="{{url_for('createposting') }}">Create Posting</a>
+            <div>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-item nav-link" id="home" href="{{ url_for('home') }}">Home</a>
+                  {% if current_user.is_anonymous %}
+                  <a class="nav-item nav-link" id="login" href="{{ url_for('login') }}">Login</a>
+                  {% else %}
+                  <a class="nav-item nav-link" id="logout" href="{{ url_for('logout') }}">Logout</a>
+                  {% endif %}
+                  <a class="nav-item nav-link" id="createListing" href="{{url_for('createposting') }}">Create Posting</a>
+                </div>
+              </div>
             </div>
-            </div>
+         
           </div> 
-    </nav>
+    </nav> 
     {% endblock navbar%}
     {% block content %}
     
