@@ -1,4 +1,4 @@
-from re import RegexFlag
+from re import RegexFlag, search
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField, FileField, IntegerField, TextAreaField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
@@ -30,7 +30,6 @@ class SignUpForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('Please use a different email address.')
-
 
 class NewPostingForm(FlaskForm):
     isbn_choices = []

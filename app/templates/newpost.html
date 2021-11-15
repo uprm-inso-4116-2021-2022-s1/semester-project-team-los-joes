@@ -16,6 +16,13 @@
         </div>
         </p>
         <p>
+        <div description = "position-fixed top-30 end-50">
+            {{ form.description(size=32, class="form-description", placeholder="Add Description") }}<br>
+            {% for error in form.description.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
             <div condition = "position-fixed top-65 end-35">
             {{ form.condition.label }}<br>
             {{ form.condition(class="form-condition") }}<br>
@@ -26,7 +33,6 @@
         </p>
         <p>
             <div price = "position-fixed top-50 end-55">
-            {{ form.price.label }}<br>
             {{ form.price(size=32, class="form-price", placeholder="Enter Price") }}<br>
             {% for error in form.price.errors %}
             <span style="color: red;">[{{ error }}]</span>
@@ -44,14 +50,6 @@
         </p>
         <div submit = "position-fixed top-75 end-15">
         <p>{{ form.submit() }}
-        </div>
-        </p>
-        <p>
-            <div description = "position-fixed top-30 end-50">
-            {{ form.description(size=32, class="form-description", placeholder="Add Description") }}<br>
-            {% for error in form.description.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
         </div>
         </p>
     </form>
