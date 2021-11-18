@@ -28,12 +28,30 @@
 </body>
 
 
+
 {% block content %}
 
-    <h1>Welcome To UPRM Books!</h1>
-   
+    <!-- <h1>Welcome To UPRM Books!</h1>
+    
+    <h1>Books</h1>
 
-    <a href="{{ url_for('books') }}">Books</a>
+    {% for book in books %}
+        <a href="{{url_for('postings',isbn=book.ISBN)}}">{{book.title}} - {{book.author}} - {{book.ISBN}}</a>
+    {% endfor %}
+
+    <a href="{{ url_for('books') }}">Books</a> -->
+
+      <div class="welcome-container">
+
+        <h1 class="center-welcome position-absolute top-50 start-50 translate-middle">
+          Welcome To UPRM Books!
+        </h1>
+
+      </div>
+
+      <div>
+        
+      </div>
 
 {% endblock %}
 

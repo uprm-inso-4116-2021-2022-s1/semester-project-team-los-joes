@@ -1,9 +1,21 @@
-body{
-    background-image: url('/static/src/image/Calculus.png');
-    background-position-y: 50%;
-    background-size: 30px;
-}
 
 #nav{
     background-color: green;
+}
+
+
+.welcome-container{
+    background-image: url('/static/src/images/books-shelf-home.jpeg');
+    background-repeat: no-repeat;
+    height: 30em;
+    background-position: center;
+    position: relative;
+    background-size: cover;
+}
+
+.center-welcome{
+   color: white;
+   font-weight: 700;
+   font-size: 50px;
+   background-color: black;
 }
