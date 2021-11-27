@@ -3,9 +3,6 @@
     background-color: green;
 }
 
-body{
-}
-
 .welcome-container{
     background-image: url('/static/src/images/books-shelf-home.jpeg');
     background-repeat: no-repeat;
@@ -24,18 +21,16 @@ body{
 }
 
 
-.test2{
-    margin-top: 0.8em;
-    /* background-color: red;
-    height: 30em; */
+.spacing{
+     margin: 0.2em 0.5em 0.5em 0.5em;          /*THIS COULD CAUSE PROBLEMS, Has margin bottom */
 }
 
-.orange{
+/* .orange{
     background-color: orange;
 }
 
 .blue{
-    background-color: blue;
+    background-color: lightblue;
 }
 
 .rect-size{
@@ -45,6 +40,12 @@ body{
 
 .row div:first-of-type{
     margin-right: 1.5em;
+} */
+
+
+.spacing img{
+    width: 300px;
+    height: 500px;
 }
 
 footer{
