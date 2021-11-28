@@ -108,6 +108,55 @@
         </button>
       </div>
     
+      <div class="container test">
+          <div class="row">
+            {% for book in books %}
+            <div class="col-2">
+              <img src="/static/src/images/textbooks/Biology.png" alt="Biology" class="col-lg-2.4 img-thumbnail">
+              <h6>
+                {{book.title}}
+              </h6>
+            </div>
+            <!-- <div class="col-2">
+              <img src="/static/src/images/textbooks/Chemistry.png" alt="Chemistry" class="col-lg-2.4 img-thumbnail">
+              <h6>
+                Title
+              </h6>
+            </div>
+            <div class="col-2">
+              <img src="/static/src/images/textbooks/Data.jpg" alt="Data Structures" class="col-lg-2.4 img-thumbnail">
+              <h6>
+                Title
+              </h6>
+            </div>
+            <div class="col-2">
+              <img src="/static/src/images/textbooks/Data.jpg" alt="Data Structures" class="col-lg-2.4 img-thumbnail">
+              <h6>
+                Title
+              </h6>
+            </div>
+            <div class="col-2">
+              <img src="/static/src/images/textbooks/EDFU.jpeg" alt="EDFU" class="col-lg-2.4 img-thumbnail">
+              <h6>
+                Title
+              </h6>
+            </div>
+            <div class="col-2">
+              <img src="/static/src/images/textbooks/Espanol.jpg" alt="Espanol" class="col-lg-2.4 img-thumbnail">
+              <h6>
+                Title
+              </h6>
+            </div> -->
+            {% endfor %}
+          </div>
+      </div>
+
+      <!-- <h1>Books</h1> -->
+    
+      <!-- {% for book in books %}
+          <a href="{{url_for('postings',isbn=book.ISBN)}}">{{book.title}} - {{book.author}} - {{book.ISBN}}</a>
+      {% endfor %} -->
+
     <footer>    
       <h6>
         Copyright © 2021 Team Los Joe's Inc. All rights reserved.

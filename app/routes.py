@@ -22,7 +22,8 @@ socketio = SocketIO(app, cors_allowed_origins='*')
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template("home.html")
+    b = Book.query.all()
+    return render_template("home.html", books=b)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

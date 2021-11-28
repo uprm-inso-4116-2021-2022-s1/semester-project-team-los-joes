@@ -66,3 +66,18 @@ footer h6{
     margin-bottom: 0;
     text-align: center;
 }
+
+.test{
+    background-color: red;
+    width: 60rem;
+    height: 60rem;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    margin: 1.2rem auto;
+}
+
+.test img{
+    width: 8rem;
+    height: 10rem;
+}
