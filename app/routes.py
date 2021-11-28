@@ -67,7 +67,7 @@ def signup():
 @app.route('/books')
 def books():
     b = Book.query.all()
-    return render_template('books.html',books=b)
+    return render_template('books.html',books=b) 
 
 
 @app.route('/books/<isbn>')
