@@ -3,7 +3,7 @@ import os
 from flask.wrappers import Request
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
-from app.form import LoginForm, SignUpForm, NewPostingForm
+from app.form import LoginForm, NewBookForm, SignUpForm, NewPostingForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Book, Posting, Message, Chat
 from werkzeug.urls import url_parse
@@ -99,6 +99,25 @@ def createposting():
         db.session.commit()
         return redirect(url_for('books'))
     return render_template('newpost.html', form=form)
+
+# Trying something out
+@app.route('/books/new_book', methods=['GET', 'POST'])
+@login_required
+def create_book():
+    form = NewBookForm()
+    if form.validate_on_submit():
+        img = images.save(form.image.data)
+        book = Book(
+            ISBN = form.ISBN,
+            author = form.author,
+            title = form.title,
+            retail = form.retail,
+            image = img
+        )
+        db.session.add(book)
+        db.session.commit()
+        return redirect(url_for('home'))
+    return render_template('newbook.html', form=form)
 
 
 @socketio.on('message')

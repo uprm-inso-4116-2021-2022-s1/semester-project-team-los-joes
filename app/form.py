@@ -39,5 +39,13 @@ class NewPostingForm(FlaskForm):
     description = TextAreaField('Add Description', validators=[DataRequired()])
     condition = SelectField('Condition', choices=['Like New','Used', 'Very Used', 'Barely Holding On'], validators=[DataRequired()])
     price = IntegerField('Enter Price',validators=[DataRequired()])
-    image = FileField(u'Image File', validators=[DataRequired()])
+    image = FileField('Image File', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
+class NewBookForm(FlaskForm):
+    ISBN = TextAreaField('ISBN', validators=[DataRequired()])
+    title = TextAreaField('Title', validators=[DataRequired()])
+    author = TextAreaField('Author', validators=[DataRequired()])
+    retail = IntegerField('Enter Retail Price',validators=[DataRequired()])
+    image = FileField('Image File', validators=[DataRequired()])
     submit = SubmitField('Submit')

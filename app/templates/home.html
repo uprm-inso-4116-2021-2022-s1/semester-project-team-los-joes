@@ -108,8 +108,21 @@
         </button>
       </div>
     
-      <div class="container test">
-          <div class="row">
+
+    <div class="test row">
+        {% for item in books %}
+        <div class="col-md-3"> 
+          <img src='/static/src/images/Calculus.png'>
+          <h5>{{ item.title }}</h6>
+          <h6>{{ item.author}}</h6>
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+      <!-- <div class="container test"> 
+          <div class="row spacing">
             {% for book in books %}
             <div class="col-2">
               <img src="/static/src/images/textbooks/Biology.png" alt="Biology" class="col-lg-2.4 img-thumbnail">
@@ -117,7 +130,7 @@
                 {{book.title}}
               </h6>
             </div>
-            <!-- <div class="col-2">
+            <div class="col-2">
               <img src="/static/src/images/textbooks/Chemistry.png" alt="Chemistry" class="col-lg-2.4 img-thumbnail">
               <h6>
                 Title
@@ -146,10 +159,10 @@
               <h6>
                 Title
               </h6>
-            </div> -->
+            </div>
             {% endfor %}
           </div>
-      </div>
+      </div>  -->
 
       <!-- <h1>Books</h1> -->
     

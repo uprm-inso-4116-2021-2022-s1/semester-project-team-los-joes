@@ -68,7 +68,7 @@ footer h6{
 }
 
 .test{
-    background-color: red;
+    background-color: lightslategray;
     width: 60rem;
     height: 60rem;
     display: flex;
@@ -80,4 +80,8 @@ footer h6{
 .test img{
     width: 8rem;
     height: 10rem;
+}
+
+.spacing{
+    margin-top: 2rem;
 }

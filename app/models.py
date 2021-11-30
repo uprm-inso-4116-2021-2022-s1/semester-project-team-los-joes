@@ -45,6 +45,8 @@ class Book(db.Model):
     author = db.Column(db.String(60))
     retail = db.Column(db.Integer)
     postings = db.relationship('Posting', backref='book',lazy=True)
+    # image = db.Column(db.Text, nullable=False)
+    # sa.Column('image', sa.Text(), nullable=False),
 
     def __repr__(self) -> str:
         return '<Title {}, ISBN {}>'.format(self.title,self.ISBN)
