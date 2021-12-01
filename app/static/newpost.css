@@ -4,13 +4,31 @@ body{
     background-repeat: no-repeat;
     
 }
-.form-description{
-    width: 500px;
-    height: 300px;
+form{
+    width: fit-content;
+   margin: auto;
+   justify-content: center; 
 }
 
-.form{
-    /* justify-content: center;
-    display: flex;
-    align-items: center;  */
+.form-items{
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+}
+.form-container{
+    margin-top: 2%;
+    background-color: white; 
+    border-radius: 15px;
+    position: fixed;
+    left: 25%;
+    width: 500px;
+    height: 500px;
+}
+.form-control{
+    border-radius: 15px;
+    box-shadow: 1px black;
+    width: 75%;
+    padding: 3px;
+    margin-bottom: 10px;
 }

@@ -1,55 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
 <head><link href="/static/newpost.css" rel="stylesheet"></head>
-    <!-- <h1>New Posting</h1> -->
-    <form action="" method="post" enctype="multipart/form-data" class="form">
-        {{form.csrf_token}}
-        {{ form.hidden_tag() }}
-        <p>
-            <div title = "position-fixed top-20 end-35">
-            {{ form.title.label }}<br>
-            {{ form.title(class="form-title")}}<br>
-            {% for error in form.title.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </div>
-        </p>
-        <p>
-        <div description = "position-fixed top-30 end-50">
-            {{ form.description(size=32, class="form-description", placeholder="Add Description") }}<br>
-            {% for error in form.description.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-        <p>
-            <div condition = "position-fixed top-65 end-35">
-            {{ form.condition.label }}<br>
-            {{ form.condition(class="form-condition") }}<br>
-            {% for error in form.condition.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </div>
-        </p>
-        <p>
-            <div price = "position-fixed top-50 end-55">
-            {{ form.price(size=32, class="form-price", placeholder="Enter Price") }}<br>
-            {% for error in form.price.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </div>
-        </p>
-        <p>
-            <div image = "position-fixed top-20 start-25">
-            {{ form.image.label }}<br>
-            {{ form.image(size=32, class="form-image") }}<br>
-            {% for error in form.image.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </div>
-        </p>
-        <div submit = "position-fixed top-75 end-15">
-        <p>{{ form.submit() }}
-        </div>
-        </p>
-    </form>
+    <div class="form-container">
+       <div class = "form-items">
+        <form action="" method="post" enctype="multipart/form-data" class="form">
+            {{form.csrf_token}}
+            {{ form.hidden_tag() }}
+                <div title>
+                {{ form.title.label }}<br>
+                {{ form.title( class="form-control")}}<br>
+                {% for error in form.title.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            <div description>
+                {{ form.description(size=32,  class="form-control", placeholder="Add Description") }}<br>
+                {% for error in form.description.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+                <div condition>
+                {{ form.condition.label }}<br>
+                {{ form.condition( class="form-control") }}<br>
+                {% for error in form.condition.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+                <div price>
+                {{ form.price(size=32,  class="form-control", placeholder="Enter Price") }}<br>
+                {% for error in form.price.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+                <div image>
+                {{ form.image.label }}<br>
+                {{ form.image(size=32, class="form-control") }}<br>
+                {% for error in form.image.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            <div submit>
+            {{ form.submit( class="form-control") }}
+            </div>
+        </form>
+    </div>
+    </div>
+       
 {% endblock %}
