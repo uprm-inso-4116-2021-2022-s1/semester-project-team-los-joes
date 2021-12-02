@@ -1,4 +1,9 @@
 
+body{
+    background: #ffffff url(/static/src/images/bg4.jpg)repeat fixed left top;
+    background-size: auto;
+}
+
 #nav{
     background-color: green;
 }
@@ -20,39 +25,21 @@
    background-color: black;
 }
 
-
-.spacing{
-     /* margin: 0.2em 0.5em 0.5em 0.5em;          */
-     
-     
-     /*THIS COULD CAUSE PROBLEMS, Has margin bottom */
+.carousel-spacing{
+     height: 60%;
+     width: 100%; 
+     /* background-color: red;  */
+     background-size: cover;       
 }
-
-/* .orange{
-    background-color: orange;
-}
-
-.blue{
-    background-color: lightblue;
-}
-
-.rect-size{
-    border-radius: 10px;
-    height: 20em;
-}
-
-.row div:first-of-type{
-    margin-right: 1.5em;
-} */
-
-
-.spacing img{
-    width: 300px;
-    height: 500px;
+.carousel-spacing img{
+    /* width: 200px; */
+    height: 550px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 footer{
-    margin-top: 50em;
+    margin-top: 5em;
     height: 2.2em;
     background-color: #577590;
     display: flex;
@@ -68,20 +55,52 @@ footer h6{
 }
 
 .test{
-    background-color: lightslategray;
-    width: 60rem;
-    height: 60rem;
+    /* background-color: rgba(56, 116, 52,1); */
+    background-color: white; 
+    width: 80rem;
+    height: 65rem;
     display: flex;
     align-items: center; 
     justify-content: center; 
     margin: 1.2rem auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 2px #e3e3e3;
 }
 
 .test img{
     width: 8rem;
     height: 10rem;
+    transition: all 0.8s ease; 
 }
 
-.spacing{
-    margin-top: 2rem;
+
+.spacing img{
+    margin-bottom: 0.6em;
+}
+
+ .test a{
+    color: #212529;
+    text-decoration: none;
+}
+
+.spacing:nth-of-type(2){
+    margin-top: 1em;
+}
+
+.test a img:hover{
+    filter: brightness(80%);
+    width: 10rem;
+    height: 12rem;
+}
+.test a:hover{
+    color: #2CD0F4;
+}
+
+.carousel-spacing p {
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.p{
+    font-size: inherit;
 }

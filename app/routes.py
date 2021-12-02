@@ -106,13 +106,13 @@ def createposting():
 def create_book():
     form = NewBookForm()
     if form.validate_on_submit():
-        img = images.save(form.image.data)
+        #img = images.save(form.image.data)
         book = Book(
             ISBN = form.ISBN,
             author = form.author,
             title = form.title,
             retail = form.retail,
-            image = img
+            #image = img
         )
         db.session.add(book)
         db.session.commit()
