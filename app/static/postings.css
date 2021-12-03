@@ -1,0 +1,93 @@
+body{
+    background: #ffffff url(/static/src/images/bg4.jpg)repeat fixed left top;
+}
+
+.circle{
+    border-radius: 50%;
+}
+
+footer{
+    margin-top: 5em;
+    height: 2.2em;
+    background-color: #577590;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+footer h6{
+    color: white;
+    font-size: 0.6em;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+hr{
+    border: 2px solid gray;
+    border-radius: 15px;
+}
+
+p{
+    text-align: justify;
+}
+
+.top{
+    background-color: rgb(255, 255, 255);
+    margin: 3rem auto;
+    width: 70%;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 2px #e3e3e3;
+    /* height: 700px */
+}
+
+.right{
+    height: 25rem;
+}
+
+.right h2{
+    margin-top: 3.5rem;
+}
+
+.left{
+    height: 25rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.book-properties{
+    padding: 2rem;
+    vertical-align: middle;
+}
+
+.book-properties h4{
+    margin-top: 1.2rem;
+    text-align: center;
+}
+
+.book-properties h2{
+    text-align: center;
+}
+
+
+.book_image{
+    margin: auto;
+    box-shadow: 0px 0px 5px 2px #e3e3e3;
+}
+
+.listings{
+    margin-left: 25rem;
+    margin-right: 25rem;
+    padding-bottom: 2.5rem;
+}
+
+.body-align{
+    margin-top: 1.2rem;
+}
+
+
+.text-Bold{
+    font-weight: 800;
+}
+

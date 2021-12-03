@@ -74,8 +74,13 @@ def books():
 @app.route('/books/<isbn>')
 def postings(isbn):
     book = Book.query.filter_by(ISBN = isbn).first_or_404()
-    postings = book.postings
-    return render_template('postings.html',book=book, postings=postings,basedir=app.config["UPLOAD_FOLDER"])
+    postings = Posting.query.filter_by(book_id=book.ISBN, available=True).all()
+    count = 0
+    for post in postings:
+        count += 1
+    optional = "s"
+    return render_template('postings.html',book=book, postings=postings,
+        basedir=app.config["UPLOAD_FOLDER"], count=count, optional=optional)
 
 def render_picture(data):
 
@@ -92,12 +97,13 @@ def createposting():
         created_by = current_user
         book_id = book.ISBN
         condition = form.condition.data
+        description = form.description.data
         price = form.price.data
         filename = images.save(form.image.data)
-        posting = Posting(created_by=created_by.id, book_id=book_id, condition=condition, price = price, img=filename)
+        posting = Posting(created_by=created_by.id, book_id=book_id, description=description, condition=condition, price = price, img=filename)
         db.session.add(posting)
         db.session.commit()
-        return redirect(url_for('books'))
+        return redirect(url_for("postings", isbn = book_id))
     return render_template('newpost.html', form=form)
 
 # Trying something out
@@ -137,3 +143,28 @@ def chats():
     user = current_user
     chats = Chat.query.filter_by(user1=user.id).all() + Chat.query.filter_by(user2=user.id).all()
     return render_template('chats.html',user=user, chats=chats)
+
+
+@app.route('/profile')
+@login_required
+def profile():
+    user = current_user
+    listings = Posting.query.filter_by(created_by=user.id, available=True).all()
+    return render_template('profile.html',user=user, listings=listings)
+
+
+@app.route('/profile/update/<posting_id>')
+@login_required
+def set_false(posting_id):
+    posting = Posting.query.filter_by(id=posting_id).first_or_404()
+    posting.availability = False
+    db.session.commit()
+    return redirect(url_for(profile))
+
+
+@app.route('/profile/sold')
+@login_required
+def profile_sold():
+    user = current_user
+    listings = Posting.query.filter_by(created_by=user.id, available=False).all()
+    return render_template('profile_sold.html',user=user, listings=listings)

@@ -1,13 +1,57 @@
 {% extends "base.html" %}
+{% block title %}Postings{% endblock %}
 
 {% block content %}
-    <h1>Showing Postings for: {{book.title}}</h1>
-    {% for post in postings %}
-        {{post.condition}} - {{post.price}} <br>
-        <img src="{{basedir}}/{{post.img}}"><br>
-    {% endfor %}
 
-    
+<div class="container-fluid top">
+    <div class="row align-items-center rounded bg-blanco">
+        <div class="col-lg-4 left align-items-center">
+            <img src="/static/src/images/textbooks/Data.jpg" class="book_image" alt="Data Structures" img-thumbnail>
+          </div>
+        <div class="col-lg-8 right align-items-center">
+            <div class="book-properties row">
+                <h2>{{book.title}}</h2>
+                <h4>Book Description</h4>
+                <p>
+                    This international student version of Data Structures and Algorithms
+                    in Java provides an introduction to data structures and algorithms,
+                    including their design, analysis, and implementation.
+                </p>
+            </div>
+        </div>
+      </div>
+      
+      <hr>
 
-    
+      <!-- Listing -->
+      <div class="listings">
+        <h1>{{count}} Listings</h1>
+        {% for post in postings %}
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="/static/src/images/profile-icon.png" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body body-align">
+                    <h6 class="card-text"><span class="text-Bold">Condition:</span>   {{post.condition}}</h6>
+                    <h6 class="card-text"><span class="text-Bold">Price:</span>   {{post.price}}</h6>
+                    <h6 class="card-text"><span class="text-Bold">Description:</span>   {{post.description}}</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+</div>
+
+<footer>    
+    <h6>
+        Copyright © 2021 Team Los Joe's Inc. All rights reserved.
+        <br>
+        More ways to shop and sell: Find a book or other items near you. Or call 1-800-YO-MAMA.
+    </h6>
+</footer>
+
 {% endblock %}
+

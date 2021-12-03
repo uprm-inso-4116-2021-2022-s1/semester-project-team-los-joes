@@ -32,8 +32,10 @@ class Posting(db.Model):
     created_by = db.Column(db.Integer, db.ForeignKey('user.id'))
     book_id = db.Column(db.Integer,db.ForeignKey('book.ISBN'))
     condition = db.Column(db.String(120))
+    description = db.Column(db.String(120))
     price = db.Column(db.Integer)
     img = db.Column(db.Text, nullable=False)
+    available = db.Column(db.Boolean, default=True)
 
     def __repr__(self) -> str:
         return 'ISBN: {}'.format(self.book_id)
@@ -45,8 +47,7 @@ class Book(db.Model):
     author = db.Column(db.String(60))
     retail = db.Column(db.Integer)
     postings = db.relationship('Posting', backref='book',lazy=True)
-    #image = db.Column(db.Text, nullable=False)
-    # sa.Column('image', sa.Text(), nullable=False),
+    # image = db.Column(db.Text, nullable=True)
 
     def __repr__(self) -> str:
         return '<Title {}, ISBN {}>'.format(self.title,self.ISBN)
@@ -68,3 +69,4 @@ class Chat(db.Model):
     messages = db.relationship('Message',backref='chat',lazy=True)
     def __repr__(self) -> str:
         return '<Id {}, user1 {}, user2 {}>'.format(self.id,self.user1, self.user2)
+

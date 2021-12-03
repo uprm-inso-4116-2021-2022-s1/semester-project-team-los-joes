@@ -17,6 +17,8 @@
       <script src="{{url_for('static', filename='showPassword.js')}}"></script>
     {% elif request.endpoint == 'signup' %}
       <link href="{{ url_for('static', filename='signup.css') }}" rel="stylesheet" type="text/css">
+    {% elif request.endpoint == 'postings' %}
+    <link href="{{ url_for('static', filename='postings.css') }}" rel="stylesheet" type="text/css">
     {% endif %}
 {% endblock %}
     <title>{% block title %}{% endblock %} - UPRM Books</title>
